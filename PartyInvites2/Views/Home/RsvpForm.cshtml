@@ -8,11 +8,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/stylees.css" rel="stylesheet" />
     <title>RsvpForm</title>
 </head>
 <body>
     <div>
         <form asp-action="RsvpForm" method="post">
+            <div asp-validation-summary="All"></div>
             <p>
                 <label asp-for="Name">Your Name:</label>
                 <input asp-for="Name" />
