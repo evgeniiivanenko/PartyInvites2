@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PartyInvites2.Models;
+using PartyInvites2.Repositories;
 
 namespace PartyInvites2.Controllers
 {
@@ -27,7 +28,8 @@ namespace PartyInvites2.Controllers
         [HttpPost]
         public ViewResult RsvpForm(GuestResponse guestResponse)
         {
-            return View();
+            Repository.AddResponse(guestResponse);
+            return View("Thanks",guestResponse);
         }
     }
 }
